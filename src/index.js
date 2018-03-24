@@ -1,7 +1,13 @@
-import './assets/stylesheets/styles.scss';
-
 import React from 'react'; // import the main react dependency
 import ReactDOM from 'react-dom'; // import reactDOM
+import { Provider } from "react-redux"; //glue for react and redux
+import Store from "./Store"; //redux state store
 import App from './app/App.jsx'; // import the main app component
 
-ReactDOM.render(<App />, document.getElementById('root')); // render our App component and mount it to our #root element
+import "./assets/stylesheets/styles.scss";
+
+ReactDOM.render(
+   <Provider store={Store}> {/* Glue for react and redux */}
+      <App /> {/* Render our App Comonent */}
+   </Provider>, 
+   document.getElementById('root')); // and mount it to our #root element
